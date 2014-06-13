@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Example Application</title>
+  <title>This 'N' That</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,11 +13,17 @@
     <link rel="shortcut icon" href="/favicon.ico">
 </head>
 <body>
-  <h1>Example Application</h1>
+  <h1>This 'N' That</h1>
+  <div class="on_hand"></div>
+  <textarea rows="1" cols="40"></textarea>
+  <div class="out_of">
+    <p>So you're out of...</p>
+  </div>
 
   <!-- @if GULP_ENVIRONMENT='development' -->
   <script type="text/javascript" src="/scripts/vendor.js"></script>
   <!-- @endif -->
+  <script type="text/javascript" src="/scripts/jquery.2.1.1.js"></script>
   <script type="text/javascript" src="/scripts/application.js"></script>
 </body>
 </html>

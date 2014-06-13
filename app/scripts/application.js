@@ -1,12 +1,14 @@
 /* global $ */ 'use strict';
 
 var Application = window.Application = (function() {
+  var mods = require('./controllers/mods');
   return {
     run: function() {
       console.log('running...');
+      mods.create();
     },
     controllers: {
-      posts: require('./controllers/posts')
+      mods: require('./controllers/mods')
     }
   };
 })();
