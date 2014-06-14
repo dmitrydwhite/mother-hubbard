@@ -5,18 +5,6 @@ exports.create = function() {
   var currentIngredeint = '';
   var allIngredients = '';
 
-  var showOtherIngredients = function (obj) {
-    var tenRecipes = obj.matches;
-    tenRecipes.forEach(function (recipe) {
-      recipe.ingredients.forEach(function (item) {
-        $('<p>', {text: 'yes',
-          'class': 'has'}).appendTo('.maybes');
-        $('<p>', {text: item}).appendTo('.maybes');
-        $('<p>', {text: 'no', 'class': 'not'}).appendTo('.maybes');
-      });
-    });
-  };
-
   var sendIngredient = function (string) {
     $('<p>', {text: string}).appendTo('.on_hand');
     currentIngredeint = '';
