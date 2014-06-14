@@ -5,6 +5,17 @@ exports.create = function() {
   var currentIngredeint = '';
   var allIngredients = '';
 
+  var showRecipes = function (obj) {
+    console.log(obj);
+    var returnedRecipes = obj.matches;
+    returnedRecipes.forEach(function(recipe) {
+      console.log(recipe.attributes.course);
+      $('<p>', {text: recipe.recipeName +
+        ' ' + recipe.attributes.course})
+        .appendTo('.returned_recipes');
+    });
+  };
+
   var sendIngredient = function (string) {
     $('<p>', {text: string}).appendTo('.on_hand');
     currentIngredeint = '';
@@ -23,7 +34,7 @@ exports.create = function() {
       .then(function (data, status, xhr) {
         console.log('I have obtained ze recipes');
         console.log(data);
-        showOtherIngredients(data);
+        showRecipes(data);
       }, function (xhr, status, error) {
         console.log(error);
       });
