@@ -10,7 +10,7 @@ exports.create = function() {
     tenRecipes.forEach(function (recipe) {
       recipe.ingredients.forEach(function (item) {
         $('<p>', {text: 'yes',
-          "class": 'has'}).appendTo('.maybes');
+          'class': 'has'}).appendTo('.maybes');
         $('<p>', {text: item}).appendTo('.maybes');
         $('<p>', {text: 'no', 'class': 'not'}).appendTo('.maybes');
       });
