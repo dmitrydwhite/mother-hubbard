@@ -5,15 +5,15 @@ exports.create = function() {
   var currentIngredeint = '';
   var allIngredients = '';
 
-  var showOtherIngredients = function (obj) {
-    var tenRecipes = obj.matches;
-    tenRecipes.forEach(function (recipe) {
-      recipe.ingredients.forEach(function (item) {
-        $('<p>', {text: 'yes',
-          'class': 'has'}).appendTo('.maybes');
-        $('<p>', {text: item}).appendTo('.maybes');
-        $('<p>', {text: 'no', 'class': 'not'}).appendTo('.maybes');
-      });
+  var showRecipes = function (obj) {
+    console.log(obj);
+    var returnedRecipes = obj.matches;
+    returnedRecipes.forEach(function(recipe) {
+      console.log(recipe.attributes.course);
+      $('<p>', {text: recipe.recipeName +
+        ' ' + recipe.attributes.course})
+        .appendTo('.returned_recipes');
+      $('<img>', {src: recipe.imageUrlsBySize[90]}).appendTo('.returned_recipes');
     });
   };
 
@@ -35,7 +35,7 @@ exports.create = function() {
       .then(function (data, status, xhr) {
         console.log('I have obtained ze recipes');
         console.log(data);
-        showOtherIngredients(data);
+        showRecipes(data);
       }, function (xhr, status, error) {
         console.log(error);
       });
