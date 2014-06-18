@@ -13,6 +13,7 @@ exports.create = function() {
       $('<p>', {text: recipe.recipeName +
         ' ' + recipe.attributes.course})
         .appendTo('.returned_recipes');
+      $('<img>', {src: recipe.imageUrlsBySize[90]}).appendTo('.returned_recipes');
     });
   };
 
